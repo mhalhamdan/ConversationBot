@@ -6,10 +6,11 @@ import torch
 class Conversation(object):
     chat_history_ids = None
     respond_to = None
+    cool_down = 5
 
     def __init__(self):
         self.chat_history_ids = None
-        respond_to = None
+        self.cool_down = 5
 
         self.tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-large")
         self.model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-large")
